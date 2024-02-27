@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/deptStyle.css') }}">
+</head>
+<body>
+    <header class="head">
+        <nav>
+            <img src="{{ logo }}" alt="Logo">
+            <a href="{{ url_for('hello_world') }}">&#10094; Back to Home</a>
+        </nav>
+    </header>
+    <img src="{{ image }}" alt="Centrifuge_Image">
+    <div class="about">
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+    </div>
+    <div class="table-container">
+        <h1>List of the Equipments:</h1>
+        <div class = "searchBox">
+            <input type = "text" placeholder = "Search" class = "inputText" id = "inputText" autocomplete = "off">
+            <button onclick = "clearText()" id = "clear" style="visibility: hidden;"><img src = "../static/icons/clear.png"></button>
+            <button onclick = "search()" id = "shbtn"><img src = "../static/icons/search.png"></button>
+        </div>
+        <table id="equipmentTable">
+            {% if data|length == 0 %}
+                <tr><th>Data Not Found</th><tr>
+            {% else %}
+                <tr>
+                    <th>S.No</th>
+                    <th>Equipment Name</th>
+                    <th>Department</th>
+                    <th>Model</th>
+                    <th>Serial No</th>
+                    <th>Company</th>
+                    <th>Asset No</th>
+                    <th>More</th>
+                </tr>
+                {% for i in range(data|length) %}
+                <tr>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ data[i]["Equipment_name"] }}</td>
+                    <td>{{ data[i]["Department"] }}</td>
+                    <td>{{ data[i]["Model"] }}</td>
+                    <td>{{ data[i]["Serial"] }}</td>
+                    <td>{{ data[i]["Company"] }}</td>
+                    <td>{{ data[i]["AssetNo"] }}</td>
+                    <td><button onclick="openHistoryWindow('{{ data[i]['Serial'] }}')">&rarr;</button></td>
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </div>
+    <div id="history-window" class="floating-window">
+        <h1>More Details:</h1>
+        <span class="close-button" onclick="closeHistoryWindow()">&times;</span>
+        <div id = "dialogTable"></div>
+    </div>
+    <div class="link">
+        <p>To read more about our department visit: <a href="https://www.nandhamedicalcollege.org/" target="_blank">www.nandhamedicalcollege.org</a></p>
+    </div>
+    <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+</body>
+</html>
