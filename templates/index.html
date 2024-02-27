@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandha Medical College and Hospital</title>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dot-wave">
+        <div class="dot-wave__dot"></div>
+        <div class="dot-wave__dot"></div>
+        <div class="dot-wave__dot"></div>
+        <div class="dot-wave__dot"></div>
+    </div>
+    <header class="head">
+        <nav>
+            <img src="{{ url_for('static', filename='icons/logo.png') }}" alt="Logo">
+            <div class="menu-icon" onclick="toggleMenu()">&#9776; Menu</div>
+            <ul class="nav-list">
+                <li><a onclick="ReloadPage()">Home</a></li>
+                <li><a href="#about-us">About</a></li>
+                <li><a href="#departments">Equipments</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="image-gallery">
+        <button class="prev-button" onclick="prevImage()">&#10094;</button>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='pics/ClgImg') }}" alt="Image 1">
+            <img src="{{ url_for('static', filename='pics/image1.jpeg') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='pics/image2.jpeg') }}" alt="Image 3">
+            <img src="{{ url_for('static', filename='pics/image3.jpeg') }}" alt="Image 4">
+            <img src="{{ url_for('static', filename='pics/image4.jpeg') }}" alt="Image 5">
+        </div>
+        <button class="next-button" onclick="nextImage()">&#10095;</button>
+    </div>
+    <section id="about-us" class="section-design"> 
+        <h1 class="abt-us">About Us:</h1>
+        <p><label></label>This web application provides a comprehensive overview of equipment details, serial numbers, and due dates for all departments within a hospital. Through an intuitive web-based interface, it offers a centralized platform for hospital staff to efficiently manage and track vital equipment information. By consolidating this data, the application ensures that medical devices are well-maintained, calibrated, and ready for use, thereby optimizing patient care and hospital operations. Leveraging data-driven insights, it empowers hospital staff to proactively address equipment maintenance needs, minimize downtime, and maintain the highest standards of healthcare service integrity. This web application is set to enhance the management and reliability of medical equipment in a hospital environment.</p>
+    </section>
+    <section id="departments" class="section-design">
+        <h1 class="dept">Equipments:</h1>
+        <div class="department-container">
+            <div class="department-box department-box1">
+                <img src="{{ url_for('static', filename='pics/Centrifuge.png') }}">
+                <div class="box-content">
+                    <h3>CENTRIFUGE</h3>
+                    <p>A centrifuge is a scientific device that is used to separate fluids, gasses, or liquids based on the density of the subject. The separation is acquired by spinning a container with the material at a very high speed.</p>
+                    <button id="centrifuge">Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box2">
+                <img src="{{ url_for('static', filename='pics/ventilator.jpg') }}">
+                <div class="box-content">
+                    <h3>VENTILATOR</h3>
+                    <p>A ventilator is a type of breathing apparatus, a class of medical technology that provides mechanical ventilation by moving breathable air into and out of the lungs, to deliver breaths to a patient who is physically unable to breathe, or breathing insufficiently.</p>
+                    <button id = "ventilator">Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box3">
+                <img src="{{ url_for('static', filename='pics/woodslamp.jpg') }}">
+                <div class="box-content">
+                    <h3>WOODSLAMP</h3>
+                    <p>Wood's lamp is a lamp that emits long-wave ultraviolet light and very little visible light.One type of lamp has a violet or blue filter material in a separate glass filter which blocks most visible light and allows through UV,so the lamp has a dim violet glow when operating.</p>
+                    <button id = "woodslamp">Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box4">
+                <img src="{{ url_for('static', filename='pics/patientMonitor.jpg') }}">
+                <div class="box-content">
+                    <h3>PATIENT MONITOR</h3>
+                    <p>It can be performed by continuously measuring certain parameters by using a medical monitor, or by repeatedly performing medical tests (such as blood glucose monitoring with a glucose meter in people with diabetes mellitus).</p>
+                    <button id = "patientmonitor">Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box5">
+                <img src="{{ url_for('static', filename='pics/Anesthesia.jpg') }}">
+                <div class="box-content">
+                    <h3>ANESTHESIA</h3>
+                    <p>An anaesthetic machine (British English) or anesthesia machine (American English) is a medical device used to generate and mix a fresh gas flow of medical gases and inhalational anaesthetic agents for the purpose of inducing and maintaining anaesthesia.</p>
+                    <button id = "anesthesia">Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box6">
+                <img src="{{ url_for('static', filename='pics/ECG.jpg') }}">
+                <div class="box-content">
+                    <h3>Dermatology, Venerealogy and leprosy</h3>
+                    <p>The Dermatology department is a branch of medicine that is concerned with the diagnosis and treatment of skin and its appendages, Venerealogy is the study of sexually trasmitted infection, leoprology study of leprosy.</p>
+                    <button>Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box7">
+                <img src="{{ url_for('static', filename='pics/Endoscopy.jpg') }}">
+                <div class="box-content">
+                    <h3>Dermatology, Venerealogy and leprosy</h3>
+                    <p>The Dermatology department is a branch of medicine that is concerned with the diagnosis and treatment of skin and its appendages, Venerealogy is the study of sexually trasmitted infection, leoprology study of leprosy.</p>
+                    <button>Read more &#10095</button>
+                </div>
+            </div>
+            <div class="department-box department-box8">
+                <img src="{{ url_for('static', filename='pics/X-Ray.jpg') }}">
+                <div class="box-content">
+                    <h3>Dermatology, Venerealogy and leprosy</h3>
+                    <p>The Dermatology department is a branch of medicine that is concerned with the diagnosis and treatment of skin and its appendages, Venerealogy is the study of sexually trasmitted infection, leoprology study of leprosy.</p>
+                    <button>Read more &#10095</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="facilities" class="section-design"> 
+        <h1 class="cls-facilities">Facilities:</h1>
+        <p><label></label>Hospitals serve as the cornerstone of healthcare infrastructure, offering a wide array of essential facilities that cater to the diverse needs of patients and the community at large. At the heart of every hospital are its dedicated medical staff, including doctors, nurses, and support personnel, all working tirelessly to provide comprehensive care. These institutions house cutting-edge medical equipment, including diagnostic tools like X-ray and ultrasound machines, enabling accurate assessments of patients' conditions. Operating theaters equipped with advanced surgical instruments facilitate life-saving procedures, while intensive care units stand ready to provide critical care support. Additionally, hospitals offer vital support services, such as pharmacies for medication dispensing, radiology departments for imaging, and emergency rooms for immediate medical attention. All these facilities combine to create a nurturing environment focused on healing and promoting the well-being of individuals in need.</p>
+    </section>
+    <section id="contacts">
+        <div>
+            <img class="foot-clg-logo" src="{{ url_for('static', filename='icons/logo.png') }}" alt="Logo">
+            <div class="college-address">
+                <p>Contact us<br>Nandha Mediacl College and Hospital<br>Perundurai Main Road Erode - 638052. Erode(Dt), Tamilnadu, India.</p>
+            </div>
+            <div class="contact-details">
+                <p><img src="{{ url_for('static', filename='icons/Call.png') }}">04294-222 222,<br>+91 7373712227</p>
+                <ul class="social-media">
+                    <li><a href=""><img src="{{ url_for('static', filename='icons/facebook-f.png') }}"></a></li>
+                    <li><a href=""><img src="{{ url_for('static', filename='icons/twitter.png') }}"></a></li>
+                    <li><a href=""><img src="{{ url_for('static', filename='icons/google-plus-g.png') }}"></a></li>
+                    <li><a href=""><img src="{{ url_for('static', filename='icons/youtube.png') }}"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <p>Copyright © 2023 Nandha Medical College and Hospital. All Rights Reserved<br><lable class="intro">This site was created by: NEC_BME_Students(2020 - 2024)<label></label></p>
+        </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
